@@ -1,4 +1,7 @@
-describe.mlogit<-function(...){
+#' Describe the Multinomial Probit Model
+#' param model a dummy model
+#' value a list
+describe.mlogit<-function(model) {
 category <- "multinomial"
 description  <- "Multinomial Logistic Regression for Dependent Variables with Unordered Categorical Values"
 authors <- c()
