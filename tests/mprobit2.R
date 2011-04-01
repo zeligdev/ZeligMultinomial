@@ -1,5 +1,6 @@
 # TEST2
 library(multivariate.zelig)
+
 data(detergent)
 
 z.out <- zelig(

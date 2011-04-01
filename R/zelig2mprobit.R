@@ -4,9 +4,11 @@
 #' param data a data.frame 
 #' return a list specifying '.function'
 zelig2mprobit <- function (formula, choiceX = NULL, cXnames = NULL, ..., data) {
-  if (!missing(choiceX)) {
+
+  # if choiceX is set, then evaluate the result
+  # along with an attached data.frame
+  if (!missing(choiceX))
     choiceX <- eval.in(choiceX, data)
-  }
 
 
   list(

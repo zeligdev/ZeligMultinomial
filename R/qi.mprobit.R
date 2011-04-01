@@ -21,39 +21,27 @@ qi.mprobit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
   pv1 <- pv2 <- NA
 
   # if both are null, just get a prediction
-  if (is.null(x) && is.null(x1)) {
+  ev1 <- if (is.null(x) && is.null(x1)) {
     simulations <- predict(fitted, n.draws = num)
 
-    ev1 <- simulations$p[1, , ]
-    ev1 <- t(ev1)
-
-    pv1 <- simulations$o[1, , ] * num
-    pv1 <- as.factor(t(pv1))
-    pv1 <- apply(pv1, 2, as.factor)
+    ev1 <- .compute.ev.mnp(simulations, x, num)
+    pv1 <- .compute.pv.mnp(simulations, x, num)
   }
 
   # if x is not null, get predictions using x's setx data
   if (! is.null(x)) {
     simulations1 <- predict(fitted, newdata = frame1, n.draws = num)
 
-    ev1 <- simulations1$p[1, , ]
-    ev1 <- t(ev1)
-
-    pv1 <- simulations1$o[1, , ] * num
-    pv1 <- t(pv1)
-    pv1 <- apply(pv1, 2, as.factor)
+    ev1 <- .compute.ev.mnp(simulations1, x, num)
+    pv1 <- .compute.pv.mnp(simulations1, x, num)
   }
 
   # if x1 is not null, get predictions using the x1's setx data
   if (! is.null(x1)) {
     simulations2 <- predict(fitted, newdata = frame2, n.draws = num)
 
-    ev2 <- simulations2$p[1, , ]
-    ev2 <- t(ev2)
-
-    pv2 <- simulations2$o[1, , ] * num
-    pv2 <- t(pv2)
-    pv2 <- apply(pv2, 2, as.factor)
+    ev2 <- .compute.ev.mnp(simulations2, x1, num)
+    pv2 <- .compute.pv.mnp(simulations2, x1, num)
   }
 
   list(
@@ -87,4 +75,28 @@ qi.mprobit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
   # these variables are
   d[, names(x$values)] <- x$values
   d
+}
+
+#'
+#'
+#'
+.compute.ev.mnp <- function(simulations, x, num) {
+  if (is.null(x))
+    return(NA)
+
+  ev <- simulations$p[1, , ]
+  ev <- t(ev)
+
+}
+
+.compute.pv.mnp <- function(simulations, x, num) {
+  if (is.null(x))
+    return(NA)
+
+  pv <- simulations$o[1, , ] * num
+  pv <- t(pv)
+  pv <- apply(pv, 2, factor)
+  levels(pv) <- 1:ncol(pv)
+
+  pv
 }
