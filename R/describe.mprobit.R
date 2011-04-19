@@ -2,7 +2,6 @@
 #' param model a dummy model
 #' value a list
 describe.mprobit <- function(model) {
-
   list(
        authors = c("Matthew Owen", "Kosuke Imai"),
        year = 2009,

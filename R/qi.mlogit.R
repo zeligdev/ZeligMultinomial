@@ -141,5 +141,7 @@ qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
 
   pr <- factor(pr, levels = sort(unique(pr)), labels = ynames)
   pr <- factor(pr, ordered = FALSE)
-  matrix(pr, nrow = dim(ev)[1])
+  pr.matrix <- matrix(pr, nrow = dim(ev)[1])
+  levels(pr.matrix) <- levels(pr)
+  pr.matrix
 }

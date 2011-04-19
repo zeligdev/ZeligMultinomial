@@ -1,8 +1,8 @@
 #' interface between the Zelig model mlogit and the pre-existing function
-#' param formula a formula
-#' param ... 
-#' param data a data.frame 
-#' return a list specifying '.function'
+#' @param formula a formula
+#' @param ... 
+#' @param data a data.frame 
+#' @return a list specifying '.function'
 zelig2mlogit <- function (formula, ..., data) {
 
   .formula <- parse.formula(formula, "mlogit", data)
