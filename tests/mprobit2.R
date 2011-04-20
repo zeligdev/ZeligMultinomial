@@ -23,7 +23,4 @@ z.out <- zelig(
                )
 
 x.out <- setx(z.out)
-
 s.out <- sim(z.out, x = x.out)
-
-summary(s.out)

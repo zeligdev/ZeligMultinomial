@@ -2,8 +2,8 @@
 #' @return a list
 #' @export
 #' @author Matt Owen \email{mowen@@iq.harvard.edu}
-describe.mlogit<-function(...) {
-category <- "multinomial"
+describe.mlogit <- function(...) {
+  category <- "multinomial"
   description  <- "Multinomial Logistic Regression for Dependent Variables with Unordered Categorical Values"
   authors <- c('Matthew Owen', 'Olivia Lau', 'Kosuke Imai', 'Gary King')
   year <- 2007
@@ -20,5 +20,13 @@ category <- "multinomial"
                       specialFunction="as.factor",
                       varInSpecialFunction=c(1,1)
                       )
-list(category = category, authors = authors, year = year,text = description, description=description,package=package,parameters=parameters)
+  list(
+       category = category,
+       authors = authors,
+       year = year,
+       text = description,
+       description=description,
+       package=package,
+       parameters=parameters
+       )
 }

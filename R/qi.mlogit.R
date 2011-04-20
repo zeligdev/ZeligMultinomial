@@ -7,7 +7,7 @@
 #' param param a parameters object
 #' return a list of key-value pairs specifying pairing titles of
 #'        quantities of interest with their simulations
-qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
+qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, param=NULL, num=1000) {
   # get fitted model object
   fitted <- GetObject(obj)
 
@@ -50,9 +50,13 @@ qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
 }
 
 
-#'
-#'
-#'
+#' Split Names of Vectors into N-vectors
+#' This function is used to organize how variables are spread
+#' across the list of formulas
+#' @param constraints a constraints object
+#' @param ndim 
+#' @return a list of character-vectors
+#' @author Matt Owen and Olivia Lau and Kosuke Imai
 .construct.v <- function(constraints, ndim) {
   v <- rep(list(NULL), ndim)
 
@@ -68,18 +72,22 @@ qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
           c(v[[j]], names[i])
         else
           c(v[[j]], paste(names[i], ':', j, sep=""))
-
       }
-
     }
   }
 
   v
 }
 
-#'
-#'
-#'
+#' Simulate Expected Value for Multinomial Logit
+#' @param fitted a fitted model object
+#' @param constraints a constraints object
+#' @param all.coef all the coeficients
+#' @param x a setx object
+#' @param ndim an integer specifying the number of dimensions
+#' @param cnames a character-vector specifying the names of the columns
+#' @return a matrix of simulated values
+#' @author Matt Owen and Olivia Lau and Kosuke Imai \email{mowen@@iq.harvard.edu}
 .compute.ev <- function (fitted, constraints, all.coef, x, ndim, cnames) {
   if (is.null(x))
     return(NA)
@@ -111,10 +119,16 @@ qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
 }
 
 
-#'
-#'
-#'
+#' Simulate Predicted Values
+#' @param fitted a fitted model object
+#" @param ev the simulated expected values
+#' @param ynames ???
+#' @return a vector of simulated values
+#' @author Matt Owen and Olivia Lau and Kosuke Imai \email{mowen@@iq.harvard.edu}
 .compute.pv <- function (fitted, ev, ynames) {
+  if (all(is.na(ev)))
+    return(NA)
+
   # initialize predicted values and a matrix
   pr <- NULL
   Ipr <- sim.cut <- matrix(NA, nrow=nrow(ev), ncol(ev))

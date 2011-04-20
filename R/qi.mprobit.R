@@ -7,7 +7,7 @@
 #' param param a parameters object
 #' return a list of key-value pairs specifying pairing titles of quantities of interest
 #'        with their simulations
-qi.mprobit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
+qi.mprobit <- function(obj, x=NULL, x1=NULL, y=NULL, param=NULL, num=1000) {
 
   # get fitted model
   fitted <- GetObject(obj)
@@ -52,6 +52,10 @@ qi.mprobit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
     ev2 <- .compute.ev.mnp(simulations2, x1, num)
     pv2 <- .compute.pv.mnp(simulations2, x1, num)
   }
+
+
+  
+
 
   list(
        "Expected Values: E(Y|X)"  = ev1,

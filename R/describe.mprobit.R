@@ -1,7 +1,7 @@
 #' Describe the Multinomial Probit Model
 #' param model a dummy model
 #' value a list
-describe.mprobit <- function(model) {
+describe.mprobit <- function(...) {
   list(
        authors = c("Matthew Owen", "Kosuke Imai"),
        year = 2009,
