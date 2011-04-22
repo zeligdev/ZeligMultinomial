@@ -1,13 +1,13 @@
 #' compute quantities of interest for the Zelig model mlogit
-#' param obj a zelig object
-#' param x a setx object
-#' param x1 an optional setx object
-#' param y ...
-#' param num an integer specifying the number of simulations to compute
-#' param param a parameters object
-#' return a list of key-value pairs specifying pairing titles of
-#'        quantities of interest with their simulations
-qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, param=NULL, num=1000) {
+#' @param obj a zelig object
+#' @param x a setx object
+#' @param x1 an optional setx object
+#' @param y ...
+#' @param num an integer specifying the number of simulations to compute
+#' @param param a parameters object
+#' @return a list of key-value pairs specifying pairing titles of
+#'         quantities of interest with their simulations
+qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
   # get fitted model object
   fitted <- GetObject(obj)
 

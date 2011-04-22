@@ -7,7 +7,7 @@
 #' param param a parameters object
 #' return a list of key-value pairs specifying pairing titles of quantities of interest
 #'        with their simulations
-qi.mprobit <- function(obj, x=NULL, x1=NULL, y=NULL, param=NULL, num=1000) {
+qi.mprobit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
 
   # get fitted model
   fitted <- GetObject(obj)

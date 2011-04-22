@@ -93,8 +93,8 @@ How to cite this model in Zelig:
 > summary(z.out2)
 
 Call:
-vglm(formula = stored.formula, family = stored.family, data = stored.data, 
-    constraints = stored.constraints)
+vglm(formula = vote88 ~ pristr + othcok + othsocok, family = stored.family, 
+    data = stored.data, constraints = stored.constraints)
 
 Pearson Residuals:
                        Min       1Q   Median       3Q    Max
@@ -140,7 +140,7 @@ othsocok       0.0190151744
 
 model name: mlogit      
 formula:    vote88 ~ pristr + othcok + othsocok
-<environment: 0x1c9f1cc8>
+<environment: 0x1d515640>
 cond:       No
 results of fn:
   othcok   = 2.19573215599706
@@ -151,7 +151,7 @@ results of fn:
 
 model name: mlogit      
 formula:    vote88 ~ pristr + othcok + othsocok
-<environment: 0x1c9f1cc8>
+<environment: 0x1d515640>
 cond:       No
 results of fn:
   othcok   = 2.19573215599706
