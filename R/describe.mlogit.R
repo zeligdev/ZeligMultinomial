@@ -1,4 +1,5 @@
-#' Describe the Multinomial Probit Model
+#' Describe the Multinomial Logit Model
+#' @param ... dummy parameters
 #' @return a list
 #' @export
 #' @author Matt Owen \email{mowen@@iq.harvard.edu}

@@ -1,5 +1,5 @@
 # TEST2
-library(multivariate.zelig)
+library(multinomial.zelig)
 
 data(detergent)
 

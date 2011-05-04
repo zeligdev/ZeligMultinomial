@@ -1,6 +1,8 @@
 #' Describe the Multinomial Probit Model
-#' param model a dummy model
-#' value a list
+#' @param ... dummy parameters
+#' @return a list
+#' @export
+#' @author Matt Owen \email{mowen@@iq.harvard.edu}
 describe.mprobit <- function(...) {
   list(
        authors = c("Matthew Owen", "Kosuke Imai"),

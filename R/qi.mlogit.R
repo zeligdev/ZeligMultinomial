@@ -1,4 +1,6 @@
 #' compute quantities of interest for the Zelig model mlogit
+#' @usage \method{qi}{mlogit}(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL)
+#' @S3method qi mlogit
 #' @param obj a zelig object
 #' @param x a setx object
 #' @param x1 an optional setx object
