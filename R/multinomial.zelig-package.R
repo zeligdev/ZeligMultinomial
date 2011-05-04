@@ -2,7 +2,7 @@
 #'
 #' \tabular{ll}{
 #' Package: \tab multinomial.zelig\cr
-#' Version: \tab 0.5-1\cr
+#' Version: \tab 0.5-2\cr
 #' Date: \tab 2011-05-04\cr
 #' Depends: \tab Zelig, MNP, VGAM\cr
 #' License: \tab GPL version 2 or newer\cr
@@ -15,8 +15,8 @@
 #' mprobit: \tab Multinomial Probit Model, implemented by MNP \cr
 #' }
 #' 
-#' @name mixed.zelig-package
-#' @aliases mixed.zelig
+#' @name multinomial.zelig-package.R
+#' @aliases multinomial.zelig
 #' @docType package
 #' @author Matt Owen \email{mowen@@iq.harvard.edu}, Kosuke Imai, Olivia Lau,
 #'   and Gary King 
