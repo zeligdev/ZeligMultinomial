@@ -10,5 +10,5 @@ License: GPL (>=2)
 URL: http://gking.harvard.edu/zelig
 Packaged: Mon Mar 28 15:04:43 2011
 Collate: 'describe.mlogit.R' 'describe.mprobit.R'
-    'mulltinomial.zelig.R' 'param.mlogit.R' 'param.mprobit.R'
+    'multinomial.zelig-package.R' 'param.mlogit.R' 'param.mprobit.R'
     'qi.mlogit.R' 'qi.mprobit.R' 'zelig2mlogit.R' 'zelig2mprobit.R'
