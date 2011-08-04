@@ -21,8 +21,8 @@ zelig2mprobit <- function (formula, choiceX = NULL, cXnames = NULL, ..., data) {
        formula = formula,
        data = data,
 
-       choiceX = literal(choiceX),
-       cXnames = literal(cXnames),
+       choiceX = choiceX,
+       cXnames = cXnames,
 
        ...
        )
@@ -35,10 +35,11 @@ zelig2mprobit <- function (formula, choiceX = NULL, cXnames = NULL, ..., data) {
 #' @param obj a \code{zelig} object
 #' @param zelig.call the call to the \code{zelig} function
 #' @param call a function call
+#' @param ...  ignored aprameters
 #' @return the \code{obj} parameter with a modified call slot
 #' @author Matt Owen \email{mowen@@iq.harvard.edu}
 #' @export
-UPDATE.CALL.FORMULA <- function(obj, zelig.call, call) {
+UPDATE.CALL.FORMULA <- function(obj, zelig.call, call, ...) {
   obj$call$formula <- as.formula(call$formula)
   obj$call$choiceX <- call$choiceX
   obj

@@ -2,9 +2,9 @@
 #'
 #' \tabular{ll}{
 #' Package: \tab multinomial.zelig\cr
-#' Version: \tab 0.5-2\cr
+#' Version: \tab 0.5-3\cr
 #' Date: \tab 2011-05-04\cr
-#' Depends: \tab Zelig, MNP, VGAM\cr
+#' Depends: \tab Zelig (>= 4.0-4), MNP, VGAM\cr
 #' License: \tab GPL version 2 or newer\cr
 #' URL: \tab http://gking.harvard.edu/zelig\cr
 #' }
