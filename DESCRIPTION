@@ -1,14 +1,14 @@
-Package: multinomial.zelig
+Package: ZeligMultinomial
 Maintainer: Matthew Owen <mowen@iq.harvard.edu>
 License: GPL (>=2)
 Title: Multinomial Logit and Probit Zelig Models
 Author: Matthew Owen, Kosuke Imai, Olivia Lau, Gary King
 Description: Multinomial add-on package for Zelig
-Version: 0.5-3
+Version: 0.5-4
 Packaged: Mon Mar 28 15:04:43 2011
 URL: http://gking.harvard.edu/zelig
 Date: 2011-05-04
-Depends: Zelig (>= 4.0-4), MNP, VGAM
-Collate: 'describe.mlogit.R' 'describe.mprobit.R'
-    'multinomial.zelig-package.R' 'param.mlogit.R' 'param.mprobit.R'
-    'qi.mlogit.R' 'qi.mprobit.R' 'zelig2mlogit.R' 'zelig2mprobit.R'
+Depends: Zelig (>= 4.0-6), MNP, VGAM
+Collate: 'describe.mlogit.R' 'describe.mprobit.R' 'param.mlogit.R'
+    'param.mprobit.R' 'qi.mlogit.R' 'qi.mprobit.R' 'zelig2mlogit.R'
+    'zelig2mprobit.R' 'ZeligMultinomial-package.R'

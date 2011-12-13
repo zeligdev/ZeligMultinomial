@@ -1,5 +1,5 @@
 #
-library(multinomial.zelig)
+library(ZeligMultinomial)
 data(mexico)
 z.out2 <- zelig(list(id(vote88,"1")~pristr + othcok, id(vote88,"2")~othsocok), model = "mlogit", 
                data = mexico)

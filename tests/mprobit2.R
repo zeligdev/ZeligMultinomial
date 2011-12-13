@@ -1,5 +1,5 @@
 # TEST2
-library(multinomial.zelig)
+library(ZeligMultinomial)
 
 data(detergent)
 

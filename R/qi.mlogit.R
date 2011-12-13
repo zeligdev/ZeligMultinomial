@@ -94,7 +94,7 @@ qi.mlogit <- function(obj, x=NULL, x1=NULL, y=NULL, num=1000, param=NULL) {
   if (is.null(x))
     return(NA)
 
-  linkinv <- fitted@family@inverse
+  linkinv <- fitted@family@linkinv
 
   xm <- rep(list(NULL), ndim)
   sim.eta <- NULL

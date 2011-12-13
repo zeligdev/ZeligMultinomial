@@ -1,5 +1,5 @@
 # TESTS
-library(multinomial.zelig)
+library(ZeligMultinomial)
 
 # TEST 1
 data(japan)
